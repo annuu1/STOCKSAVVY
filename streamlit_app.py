@@ -1,6 +1,10 @@
 import streamlit as st
 
-st.title("🎈 My new app")
-st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-)
+# Title of the app
+st.title('My First Streamlit App')
+
+# Adding a slider widget
+number = st.slider('Select a number:', 1, 100)
+
+# Display the selected number
+st.write(f'You selected: {number}')
