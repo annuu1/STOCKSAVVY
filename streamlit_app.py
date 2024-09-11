@@ -1,10 +1,14 @@
 import streamlit as st
+import threading
+import time
 
-# Title of the app
-st.title('My First Streamlit App')
+def fetch_data():
+    while True:
+        # Fetch data and check for alerts
+        time.sleep(60)  # Fetch every minute
 
-# Adding a slider widget
-number = st.slider('Select a number:', 1, 100)
+st.title('Background Task Example')
 
-# Display the selected number
-st.write(f'You selected: {number}')
+if st.button('Start Background Task'):
+    thread = threading.Thread(target=fetch_data)
+    thread.start()
